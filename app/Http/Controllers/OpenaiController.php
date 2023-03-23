@@ -27,7 +27,7 @@ class OpenaiController extends Controller
     ',
             CURLOPT_HTTPHEADER => array(
                 'Content-Type: application/json',
-                'Authorization: Bearer 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'
+                'Authorization: Bearer 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'
             ),
         ));
         $response = curl_exec($curl);
@@ -50,12 +50,11 @@ class OpenaiController extends Controller
             "top_p" => 1,
             "frequency_penalty" => 0,
             "presence_penalty" => 0,
+
             'max_tokens' => 150,
             'prompt' => sprintf('Write article about: %s', $title),
         ]);
-
         $content = trim($result['choices'][0]['text']);
-
         return view('write', compact('title', 'content'));
     }
 }

@@ -3,6 +3,7 @@
 use App\Http\Controllers\CrudController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\OpenaiController;
+use App\Http\Controllers\ChatGptController;
 
 /*
 |--------------------------------------------------------------------------
@@ -49,3 +50,10 @@ Route::post('/login-user', [CrudController::class, 'loginuser'])->name('login-us
 Route::get('/dashboard', [CrudController::class, 'dashboard'])->middleware('isLoggedIn');
 
 Route::get('/logout', [CrudController::class, 'logout']);
+
+Route::get('/chatbot', function () {
+    return view('chatbot');
+});
+
+
+Route::post('/send-message', [ChatGptController::class, 'sendMessage'])->name('send-message');
