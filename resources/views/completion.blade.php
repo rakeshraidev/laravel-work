@@ -13,7 +13,7 @@
             crossorigin="anonymous"
         />
 
-        <title>Chat GPT</title>
+        <title>Chat GPT 4</title>
     </head>
     <body>
         <h1></h1>
@@ -21,8 +21,10 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-12>
+                    
                     <div class="card">
-                        <div class="card-header" style="background-color:#0d6efd; color:#fff;">
+                        <h4 align="center">Ask your question</h4>
+                        <div class="card-header" style="background-color:#d5d5d5; color:#000;">
                             FlyingSpark! How can I help you today?
                         </div>
                         <div class="card-body" id="chat-box" style="background-color:#f7f7f7">
@@ -88,7 +90,7 @@
 
                 $.ajax({
                     type: 'POST',
-                    url: '{{ route('send-message') }}',
+                    url: '{{ route('chatgpt') }}',
                     data: {message: message},
                     
                     success: function(response) {

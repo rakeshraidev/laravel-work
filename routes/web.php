@@ -4,6 +4,7 @@ use App\Http\Controllers\CrudController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\OpenaiController;
 use App\Http\Controllers\ChatGptController;
+use App\Http\Controllers\ChatAIController;
 
 /*
 |--------------------------------------------------------------------------
@@ -54,6 +55,14 @@ Route::get('/logout', [CrudController::class, 'logout']);
 Route::get('/chatbot', function () {
     return view('chatbot');
 });
-
+Route::get('/completion', function () {
+    return view('completion');
+});
+Route::get('/addfile', function () {
+    return view('addfile');
+});
 
 Route::post('/send-message', [ChatGptController::class, 'sendMessage'])->name('send-message');
+
+Route::post('/chatgpt', [ChatAIController::class, 'chatGpt'])->name('chatgpt');
+Route::get('/uploadFile', [ChatGptController::class, 'uploadFile'])->name('uploadFile');
