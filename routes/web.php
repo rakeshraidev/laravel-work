@@ -5,6 +5,8 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\OpenaiController;
 use App\Http\Controllers\ChatGptController;
 use App\Http\Controllers\ChatAIController;
+use App\Http\Controllers\FileUploadController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -66,3 +68,4 @@ Route::post('/send-message', [ChatGptController::class, 'sendMessage'])->name('s
 
 Route::post('/chatgpt', [ChatAIController::class, 'chatGpt'])->name('chatgpt');
 Route::get('/uploadFile', [ChatGptController::class, 'uploadFile'])->name('uploadFile');
+Route::post("api/upload", [FileUploadController::class, 'upload']);

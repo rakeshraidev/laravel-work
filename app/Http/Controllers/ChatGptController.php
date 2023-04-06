@@ -5,7 +5,6 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use GuzzleHttp\Client;
 use OpenAI;
-
 class ChatGptController extends Controller
 {
     public function sendMessage(Request $request)
